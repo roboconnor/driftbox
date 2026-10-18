@@ -1,8 +1,28 @@
-.venv/
+# Python
 __pycache__/
-*.pyc
-.DS_Store
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Logs
 logs/
+*.log
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Audio media
 audio/**/*.mp3
 audio/**/*.wav
 audio/**/*.flac
+audio/**/*.aiff
+audio/**/*.m4a
+
+# Local secrets or environment files
+.env
+*.local.yaml
