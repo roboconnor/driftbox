@@ -1,0 +1,20 @@
+soundscape: first_layers_test
+audio_root: audio
+mpv_binary: mpv
+
+mode: layers
+
+layers:
+  - name: bed
+    folder: bed
+    min_gap_seconds: 0
+    max_gap_seconds: 3
+    max_concurrent: 1
+    gain: 0.6
+
+  - name: events
+    folder: events
+    min_gap_seconds: 3
+    max_gap_seconds: 15
+    max_concurrent: 1
+    gain: 0.8

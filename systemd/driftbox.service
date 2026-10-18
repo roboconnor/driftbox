@@ -1,0 +1,14 @@
+[Unit]
+Description=Driftbox soundscape player
+After=multi-user.target
+
+[Service]
+Type=simple
+User=driftbox
+WorkingDirectory=/home/driftbox/driftbox
+ExecStart=/home/driftbox/driftbox/.venv/bin/python -m driftbox.main --config /home/driftbox/driftbox/config/deployment.yaml --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

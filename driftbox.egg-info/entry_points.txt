@@ -1,0 +1,2 @@
+[console_scripts]
+driftbox = driftbox.main:run

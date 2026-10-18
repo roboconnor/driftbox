@@ -1,0 +1,47 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background: #111;
+  color: #eee;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+}
+
+pre {
+  white-space: pre-wrap;
+  background: #000;
+  padding: 0.75rem;
+  border-radius: 6px;
+}
