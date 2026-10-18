@@ -10,7 +10,7 @@ layers:
     min_gap_seconds: 2
     max_gap_seconds: 15
     max_concurrent: 2
-    gain: 0.6
+    gain: 0.8
 
   - name: bowed_piano
     folder: bowed
@@ -31,11 +31,11 @@ layers:
     min_gap_seconds: 6
     max_gap_seconds: 25
     max_concurrent: 1
-    gain: 0.8
+    gain: 0.7
   
   - name: wolves
     folder: wolves
     min_gap_seconds: 5
     max_gap_seconds: 35
     max_concurrent: 1
-    gain: 0.5
+    gain: 0.7

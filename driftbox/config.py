@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import Literal
+from xml.parsers.expat import errors
 
 import yaml
 from pydantic import BaseModel, Field, ValidationError
@@ -44,8 +45,14 @@ class DriftboxConfig(BaseModel):
                 folder = self.audio_root / layer.folder
                 if not folder.is_dir():
                     errors.append(f"Missing layer folder: {folder}")
-                elif not any(folder.glob("*.mp3")):
-                    errors.append(f"No MP3 files found in: {folder}")
+                elif not any(
+                    file.suffix.lower() in {
+                        ".mp3", ".wav", ".flac", ".ogg", ".m4a", ".aiff"
+                    }
+                    for file in folder.iterdir()
+                        if file.is_file()
+                ):
+                    errors.append(f"No supported audio files found in: {folder}")
 
                 if layer.min_gap_seconds > layer.max_gap_seconds:
                     errors.append(

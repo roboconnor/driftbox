@@ -7,6 +7,15 @@ from .config import DriftboxConfig
 from .logging_setup import configure_logging
 from .player import PlayerManager
 
+AUDIO_EXTENSIONS = {
+    ".mp3",
+    ".wav",
+    ".flac",
+    ".ogg",
+    ".m4a",
+    ".aiff",
+}
+
 
 class Scheduler:
     def __init__(self, config: DriftboxConfig):
@@ -37,19 +46,38 @@ class Scheduler:
             self.threads.append(thread)
             thread.start()
 
-    def _mp3_files(self, folder: str) -> list[Path]:
+    def _audio_files(self, folder: str) -> list[Path]:
         path = self.config.audio_root / folder
-        files = sorted(path.glob("*.mp3"))
+
+        if not path.is_dir():
+            raise RuntimeError(f"Layer folder does not exist: {path}")
+
+        files = sorted(
+            file
+            for file in path.iterdir()
+            if file.is_file()
+            and file.suffix.lower() in AUDIO_EXTENSIONS
+        )
 
         if not files:
-            raise RuntimeError(f"No MP3 files in layer folder: {path}")
+            raise RuntimeError(
+                f"No supported audio files in layer folder: {path}"
+            )
 
         return files
 
     def _run_layer(self, layer) -> None:
-        files = self._mp3_files(layer.folder)
+        try:
+            files = self._audio_files(layer.folder)
+        except Exception:
+            self.logger.exception(
+                "Layer '%s' could not load its audio folder",
+                layer.name,
+            )
+            return
+
         self.logger.info(
-            "Layer '%s' started with %d files",
+            "Layer '%s' started with %d audio files",
             layer.name,
             len(files),
         )
@@ -67,6 +95,7 @@ class Scheduler:
                     break
 
                 selected = random.choice(files)
+
                 self.player.start_layer_file(
                     layer_name=layer.name,
                     file_path=selected,
