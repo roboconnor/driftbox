@@ -1,0 +1,41 @@
+soundscape: wicked_woods_birds_wolves
+audio_root: audio
+mpv_binary: mpv
+
+mode: layers
+
+layers:
+  - name: atmosphere
+    folder: bed
+    min_gap_seconds: 2
+    max_gap_seconds: 15
+    max_concurrent: 2
+    gain: 0.4
+
+  - name: birds
+    folder: bird
+    min_gap_seconds: 25
+    max_gap_seconds: 120
+    max_concurrent: 1
+    gain: 0.55
+
+  - name: bowed_piano
+    folder: bowed
+    min_gap_seconds: 40
+    max_gap_seconds: 140
+    max_concurrent: 1
+    gain: 0.5
+
+  - name: freaky_piano
+    folder: piano
+    min_gap_seconds: 20
+    max_gap_seconds: 80
+    max_concurrent: 1
+    gain: 0.65
+
+  - name: wolves
+    folder: wolves
+    min_gap_seconds: 30
+    max_gap_seconds: 140
+    max_concurrent: 1
+    gain: 0.65

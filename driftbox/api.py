@@ -1,3 +1,4 @@
+import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -8,7 +9,10 @@ from fastapi.staticfiles import StaticFiles
 from .config import DriftboxConfig, load_config
 from .service import DriftboxService
 
-CONFIG_PATH = Path("config/development.yaml")
+CONFIG_PATH = Path(
+    os.getenv("DRIFTBOX_CONFIG", "config/development.yaml")
+)
+
 WEB_DIR = Path("web")
 
 initial_config = load_config(CONFIG_PATH)

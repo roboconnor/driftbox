@@ -1,8 +1,8 @@
 import argparse
+import os
 
 import uvicorn
 
-from .api import app
 from .config import load_config
 from .logging_setup import configure_logging
 
@@ -21,7 +21,15 @@ def run() -> None:
     args = parser.parse_args()
 
     configure_logging()
-    load_config(args.config)
+
+    # Validate the chosen configuration before starting Uvicorn.
+    config = load_config(args.config)
+    print(f"Using configuration: {args.config}")
+    print(f"Soundscape: {config.soundscape}")
+    print(f"Mode: {config.mode}")
+
+    # Make the selected configuration available to driftbox.api.
+    os.environ["DRIFTBOX_CONFIG"] = str(args.config)
 
     uvicorn.run(
         "driftbox.api:app",
