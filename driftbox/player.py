@@ -39,6 +39,7 @@ class PlayerManager:
             "--no-video",
             "--really-quiet",
             "--no-terminal",
+            "--ao=alsa",
         ]
 
     def start_single_loop(self) -> None:
