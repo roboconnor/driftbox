@@ -71,35 +71,35 @@ layers:
     min_gap_seconds: 2
     max_gap_seconds: 15
     max_concurrent: 2
-    gain: 0.4
-
-  - name: birds
-    folder: bird
-    min_gap_seconds: 25
-    max_gap_seconds: 120
-    max_concurrent: 1
-    gain: 0.55
+    gain: 0.8
 
   - name: bowed_piano
     folder: bowed
-    min_gap_seconds: 60
-    max_gap_seconds: 240
+    min_gap_seconds: 40
+    max_gap_seconds: 140
     max_concurrent: 1
     gain: 0.5
 
   - name: freaky_piano
     folder: piano
-    min_gap_seconds: 120
-    max_gap_seconds: 420
+    min_gap_seconds: 20
+    max_gap_seconds: 80
     max_concurrent: 1
     gain: 0.65
-
+  
+  - name: birds
+    folder: birds
+    min_gap_seconds: 6
+    max_gap_seconds: 25
+    max_concurrent: 1
+    gain: 0.7
+  
   - name: wolves
     folder: wolves
-    min_gap_seconds: 240
-    max_gap_seconds: 720
+    min_gap_seconds: 5
+    max_gap_seconds: 35
     max_concurrent: 1
-    gain: 0.85
+    gain: 0.7
 ```
 
 The atmosphere layer is most active and may overlap with itself. Bird calls occur regularly, bowed piano provides longer haunting textures, freaky piano appears less often, and wolf howls are relatively rare high-impact events.
