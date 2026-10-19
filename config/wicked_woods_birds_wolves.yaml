@@ -9,15 +9,15 @@ layers:
     folder: bed
     min_gap_seconds: 2
     max_gap_seconds: 15
-    max_concurrent: 2
-    gain: 0.8
+    max_concurrent: 1
+    gain: 0.6
 
   - name: bowed_piano
     folder: bowed
     min_gap_seconds: 40
     max_gap_seconds: 140
     max_concurrent: 1
-    gain: 0.5
+    gain: 0.6
 
   - name: freaky_piano
     folder: piano
@@ -35,7 +35,14 @@ layers:
   
   - name: wolves
     folder: wolves
-    min_gap_seconds: 5
-    max_gap_seconds: 35
+    min_gap_seconds: 10
+    max_gap_seconds: 45
     max_concurrent: 1
     gain: 0.7
+  
+  - name: accents
+    folder: accents
+    min_gap_seconds: 100
+    max_gap_seconds: 235
+    max_concurrent: 1
+    gain: 0.5
