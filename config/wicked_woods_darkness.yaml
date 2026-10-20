@@ -1,0 +1,41 @@
+soundscape: wicked_woods_darkness
+audio_root: audio
+mpv_binary: mpv
+
+mode: layers
+
+layers:
+  - name: bed
+    folder: bed2
+    min_gap_seconds: 2
+    max_gap_seconds: 10
+    max_concurrent: 1
+    gain: 0.6
+
+  - name: atmost_gtrs
+    folder: atmost_gtrs
+    min_gap_seconds: 50
+    max_gap_seconds: 200
+    max_concurrent: 1
+    gain: 0.7
+
+  - name: choir
+    folder: choir
+    min_gap_seconds: 25
+    max_gap_seconds: 70
+    max_concurrent: 1
+    gain: 0.65
+  
+  - name: heartbeat
+    folder: heartbeat
+    min_gap_seconds: 140
+    max_gap_seconds: 300
+    max_concurrent: 1
+    gain: 0.5
+
+  - name: chant
+    folder: chant
+    min_gap_seconds: 36
+    max_gap_seconds: 140
+    max_concurrent: 1
+    gain: 0.6
