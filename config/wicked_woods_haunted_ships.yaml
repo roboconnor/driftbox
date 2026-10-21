@@ -1,0 +1,41 @@
+soundscape: wicked_woods_haunted_ships
+audio_root: audio
+mpv_binary: mpv
+
+mode: layers
+
+layers:
+  - name: water_bed
+    folder: water_bed
+    min_gap_seconds: 36
+    max_gap_seconds: 36
+    max_concurrent: 1
+    gain: 0.9
+
+  - name: accordions_weird
+    folder: accordions_weird
+    min_gap_seconds: 20
+    max_gap_seconds: 45
+    max_concurrent: 1
+    gain: 0.8
+
+  - name: accordions_scary
+    folder: accordions_scary
+    min_gap_seconds: 25
+    max_gap_seconds: 40
+    max_concurrent: 1
+    gain: 0.8
+  
+  - name: strings
+    folder: strings
+    min_gap_seconds: 45
+    max_gap_seconds: 82
+    max_concurrent: 1
+    gain: 0.7
+
+  - name: male_voice
+    folder: male_voice
+    min_gap_seconds: 62
+    max_gap_seconds: 81
+    max_concurrent: 1
+    gain: 0.85
