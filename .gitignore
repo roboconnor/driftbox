@@ -23,6 +23,10 @@ audio/**/*.flac
 audio/**/*.aiff
 audio/**/*.m4a
 
+# Images
+pi_image/*.img
+*.img
+
 # Local secrets or environment files
 .env
 *.local.yaml
